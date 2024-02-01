@@ -10,14 +10,20 @@ import { useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { createIssueSchema } from "@/app/validationSchema";
 import { z } from "zod";
+import ErrorMessage from "@/app/components/ErrorMessage";
 // 這邊將zod跟 react-form-hook 還有prisma schema結合在一起
 // 這樣我們前後端就可以使用同一個schema來驗證資料的傳輸了
 type IssueForm = z.infer<typeof createIssueSchema>;
 
 const NewIssuePage = () => {
   const router = useRouter();
-  const { register, control, handleSubmit, formState: { errors } } = useForm<IssueForm>({
-    resolver: zodResolver(createIssueSchema)
+  const {
+    register,
+    control,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<IssueForm>({
+    resolver: zodResolver(createIssueSchema),
   });
   const [error, setError] = useState("");
 
@@ -42,7 +48,7 @@ const NewIssuePage = () => {
         <TextField.Root>
           <TextField.Input placeholder="Title" {...register("title")} />
         </TextField.Root>
-        {errors.title && <Text color="red" as="p">{errors.title.message}</Text>}
+        <ErrorMessage>{errors.title?.message}</ErrorMessage>
         <Controller
           name="description"
           control={control}
@@ -50,7 +56,7 @@ const NewIssuePage = () => {
             <SimpleMDE placeholder="Description" {...field} />
           )}
         />
-        {errors.description && <Text color="red" as="p">{errors.description.message}</Text>}
+        <ErrorMessage>{errors.description?.message}</ErrorMessage>
         <Button>Submit New Issue</Button>
       </form>
     </div>
