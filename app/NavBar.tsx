@@ -1,8 +1,13 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React from "react";
 import { GrBug } from "react-icons/gr";
+import classNames from "classnames";
 
 const NavBar = () => {
+  const currentPath = usePathname();
   const links = [
     { label: "Dashboard", href: "/" },
     { label: "Issues", href: "/issues" },
@@ -15,7 +20,11 @@ const NavBar = () => {
       <ul className="flex space-x-6">
         {links.map((link) => (
           <Link
-            className="text-zinc-500 transition-colors hover:text-zinc-800"
+            className={classNames({
+              "text-zinc-900": link.href === currentPath,
+              "text-zinc-500": link.href !== currentPath,
+              "transition-colors hover:text-zinc-800": true,
+            })}
             key={link.href}
             href={link.href}
           >
