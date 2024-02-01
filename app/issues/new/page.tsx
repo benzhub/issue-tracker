@@ -1,7 +1,8 @@
 "use client";
 
-import { Button, Callout, Text, TextField } from "@radix-ui/themes";
-import SimpleMDE from "react-simplemde-editor";
+import { Button, Callout, TextField } from "@radix-ui/themes";
+import dynamic from 'next/dynamic'
+const SimpleMDE = dynamic(() => import('react-simplemde-editor'), { ssr: false })
 import { useForm, Controller } from "react-hook-form";
 import axios from "axios";
 import "easymde/dist/easymde.min.css";
@@ -52,7 +53,7 @@ const NewIssuePage = () => {
         <Controller
           name="description"
           control={control}
-          render={({ field }) => (
+          render={ ({ field }) => (
             <SimpleMDE placeholder="Description" {...field} />
           )}
         />
