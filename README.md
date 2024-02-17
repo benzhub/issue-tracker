@@ -44,5 +44,11 @@ https://www.npmjs.com/package/react-loading-skeleton
 ```bash
 npm i delay
 npm i react-loading-skeleton@3.3.1
+```
 
+### React Markdown Preview with TailwindCSS
+https://tailwindcss.com/docs/typography-plugin
+```bash
+npm i react-markdown@8.0.7
+npm install -D @tailwindcss/typography
 ```
