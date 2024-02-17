@@ -1,34 +1,48 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## 本專案練習技術點
 
-## Getting Started
-
-First, run the development server:
-
+### Radix UI
+https://www.radix-ui.com/
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+npm install @radix-ui/themes
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### TailwindCSS
+https://tailwindcss.com/docs/installation
+```bash
+npm install -D tailwindcss
+npx tailwindcss init
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### MySQL
+https://www.mysql.com/
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Prisma
+https://www.prisma.io/docs/getting-started/quickstart
+```bash
+npm install prisma@5.3.1
+npx prisma init
+```
 
-## Learn More
+### react-simplemde-editor
+https://www.npmjs.com/package/react-simplemde-editor
+```bash
+npm i react-simplemde-editor@5.2.0
+```
 
-To learn more about Next.js, take a look at the following resources:
+### React Hook Form
+https://react-hook-form.com/get-started
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+@hookform/resolvers
+https://www.npmjs.com/package/@hookform/resolvers
+```bash
+npm i react-hook-form@7.46.1
+npm i @hookform/resolvers@3.3.1
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### 載入骨架 React Loading Skeleton
+https://www.npmjs.com/package/react-loading-skeleton
+```bash
+npm i delay
+npm i react-loading-skeleton@3.3.1
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```
