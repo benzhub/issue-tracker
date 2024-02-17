@@ -52,3 +52,9 @@ https://tailwindcss.com/docs/typography-plugin
 npm i react-markdown@8.0.7
 npm install -D @tailwindcss/typography
 ```
+
+### NextAuth.js
+https://next-auth.js.org/getting-started/example
+```bash
+npm install next-auth@4.23.1
+```
