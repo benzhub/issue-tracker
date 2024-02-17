@@ -8,14 +8,12 @@ import { Issue } from "@prisma/client";
 import { Button, Callout, TextField } from "@radix-ui/themes";
 import axios from "axios";
 import "easymde/dist/easymde.min.css";
-import dynamic from "next/dynamic";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
+import SimpleMDE from 'react-simplemde-editor';
 import { z } from "zod";
-const SimpleMDE = dynamic(() => import("react-simplemde-editor"), {
-  ssr: false,
-});
+
 // 這邊將zod跟 react-form-hook 還有prisma schema結合在一起
 // 這樣我們前後端就可以使用同一個schema來驗證資料的傳輸了
 type IssueFormData = z.infer<typeof issueSchema>;
