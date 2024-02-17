@@ -22,5 +22,5 @@ model Issuse {
 enum Status {
   OPEN
   IN_PROGRESS
-  CLOESED
+  CLOSED
 }
