@@ -10,7 +10,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Issuse {
+model Issue {
   id          Int      @id @default(autoincrement())
   title       String   @db.VarChar(255) // varchar(191)
   description String   @db.Text

@@ -1,12 +1,12 @@
 import React from "react";
 import { Table } from "@radix-ui/themes";
 import prisma from "../../prisma/client";
-import IssuseStatusBadge from "../components/IssuseStatusBadge";
+import IssueStatusBadge from "../components/IssueStatusBadge";
 import delay from "delay";
 import IssueActions from "./IssueActions";
 
 const IssuesPage = async () => {
-  const issues = await prisma.issuse.findMany();
+  const issues = await prisma.issue.findMany();
   await delay(2000);
   return (
     <div>
@@ -25,10 +25,10 @@ const IssuesPage = async () => {
               <Table.Cell>
                 {issue.title}
                 <div className="block md:hidden">
-                  <IssuseStatusBadge status={issue.status}/>
+                  <IssueStatusBadge status={issue.status}/>
                 </div>  
               </Table.Cell>
-              <Table.Cell className="hidden md:table-cell"><IssuseStatusBadge status={issue.status}/></Table.Cell>
+              <Table.Cell className="hidden md:table-cell"><IssueStatusBadge status={issue.status}/></Table.Cell>
               <Table.Cell className="hidden md:table-cell">{issue.createdAt.toDateString()}</Table.Cell>
             </Table.Row>
           ))}
