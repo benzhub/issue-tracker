@@ -70,3 +70,9 @@ https://tanstack.com/query/v3/docs/framework/react/quick-start
 ```bash
 npm i @tanstack/react-query@4.35.3
 ```
+
+### React-hot-toast (通知)
+https://react-hot-toast.com/
+```bash
+npm i react-hot-toast@2.4.1
+```
