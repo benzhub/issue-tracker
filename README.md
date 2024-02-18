@@ -58,3 +58,15 @@ https://next-auth.js.org/getting-started/example
 ```bash
 npm install next-auth@4.23.1
 ```
+
+### Zod 加強資料驗證
+https://zod.dev/
+```
+npm install zod
+```
+
+### React Query
+https://tanstack.com/query/v3/docs/framework/react/quick-start
+```bash
+npm i @tanstack/react-query@4.35.3
+```
