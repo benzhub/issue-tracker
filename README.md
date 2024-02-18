@@ -76,3 +76,10 @@ https://react-hot-toast.com/
 ```bash
 npm i react-hot-toast@2.4.1
 ```
+
+
+### 圖表 Recharts
+https://recharts.org/en-US/
+```bash
+npm i recharts@2.8.0
+```
