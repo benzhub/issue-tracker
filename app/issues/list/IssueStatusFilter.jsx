@@ -3,11 +3,16 @@
 import { Select } from "@radix-ui/themes";
 import { statuses } from "./IssueStatuses";
 import React from "react";
+import { useRouter } from "next/navigation";
 
 
 const IssueStatusFilter = () => {
+  const router = useRouter();
   return (
-    <Select.Root>
+    <Select.Root onValueChange={(status)=>{
+      const query = status !== '_' ? `?status=${status}` : '';
+      router.push(`/issues/list${query}`)
+    }}>
       <Select.Trigger placeholder="Filter by status..." />
       <Select.Content>
         {statuses.map((status) => (
