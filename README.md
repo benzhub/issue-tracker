@@ -77,9 +77,14 @@ https://react-hot-toast.com/
 npm i react-hot-toast@2.4.1
 ```
 
-
 ### 圖表 Recharts
 https://recharts.org/en-US/
 ```bash
 npm i recharts@2.8.0
+```
+
+### Sentry.io Error Tracking Saas
+http://sentry.io/
+```bash
+npx @sentry/wizard@latest -i nextjs
 ```
