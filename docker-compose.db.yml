@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  db:
+    image: mysql:latest
+    container_name: issue-tracker-mysql
+    ports:
+      - 33060:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    volumes:
+      - issue-tracker-app:/data/db
+    networks:
+      - issue-tracker-network
+
+volumes:
+  issue-tracker-app:
+
+networks:
+  issue-tracker-network:
+    name: issue-tracker-network
+    driver: bridge
