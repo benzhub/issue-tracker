@@ -22,6 +22,8 @@ run_dev() {
 
 # Function for production mode: starts the production server
 run_prod() {
+  echo "Starting building..."
+  npm run build
   echo "Starting the production server..."
   npm run start
 }

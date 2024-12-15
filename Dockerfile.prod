@@ -3,28 +3,17 @@ FROM node:20-alpine AS BUILD_STAGE
 
 WORKDIR /app
 
+RUN apk add --no-cache bash
+
 COPY package.json package-lock.json ./
-
-# # RUN npm install --f --production
-# RUN npm i --production
-
 RUN npm install
+
 COPY . .
-RUN apk add openssl && npx prisma generate
-RUN npm run build
 
 FROM node:20-alpine as PRODUCTION
 
 WORKDIR /app
 
-# copy from build image
-# COPY --from=BUILD_STAGE /app/package.json ./package.json
-# COPY --from=BUILD_STAGE /app/node_modules ./node_modules
-# COPY --from=BUILD_STAGE /app/.next ./.next
-# COPY --from=BUILD_STAGE /app/public ./public
-# COPY --from=BUILD_STAGE /app/docker-entrypoint.sh ./docker-entrypoint.sh
-# COPY --from=BUILD_STAGE /app/wait-for ./wait-for
-# COPY --from=BUILD_STAGE /app/prisma ./prisma
 COPY --from=BUILD_STAGE /app/ ./
 
 EXPOSE 3000
