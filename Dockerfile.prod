@@ -1,0 +1,23 @@
+# Build-Stage
+FROM node:20-alpine AS BUILD_STAGE
+
+WORKDIR /app
+
+RUN apk add --no-cache bash
+
+COPY package.json package-lock.json ./
+RUN npm install
+
+COPY . .
+
+FROM node:20-alpine as PRODUCTION
+
+WORKDIR /app
+
+COPY --from=BUILD_STAGE /app/ ./
+
+EXPOSE 3000
+
+RUN apk add openssl && npx prisma generate
+
+CMD ["npm", "start"]
